@@ -43,14 +43,8 @@
 		6E5D51211B29EAB6006593B3 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D50FD1B29EAB6006593B3 /* HTTPRedirectResponse.m */; };
 		6E5D51221B29EAB6006593B3 /* WebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5D50FE1B29EAB6006593B3 /* WebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E5D51231B29EAB6006593B3 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D50FF1B29EAB6006593B3 /* WebSocket.m */; };
-		6E5D512E1B29EAC8006593B3 /* DAVConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5D51261B29EAC8006593B3 /* DAVConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E5D512F1B29EAC8006593B3 /* DAVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D51271B29EAC8006593B3 /* DAVConnection.m */; };
-		6E5D51301B29EAC8006593B3 /* DAVResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5D51281B29EAC8006593B3 /* DAVResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E5D51311B29EAC8006593B3 /* DAVResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D51291B29EAC8006593B3 /* DAVResponse.m */; };
-		6E5D51321B29EAC8006593B3 /* DELETEResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5D512A1B29EAC8006593B3 /* DELETEResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E5D51331B29EAC8006593B3 /* DELETEResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D512B1B29EAC8006593B3 /* DELETEResponse.m */; };
-		6E5D51341B29EAC8006593B3 /* PUTResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5D512C1B29EAC8006593B3 /* PUTResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E5D51351B29EAC8006593B3 /* PUTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D512D1B29EAC8006593B3 /* PUTResponse.m */; };
+		6E5D51381B29EC55006593B3 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5D51361B29EC55006593B3 /* CocoaAsyncSocket.framework */; };
+		6E5D51391B29EC55006593B3 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5D51371B29EC55006593B3 /* CocoaLumberjack.framework */; };
 		6EF631EB19C4178D006FBD89 /* CocoaHTTPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EF631F519C4178D006FBD89 /* CocoaHTTPServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF631F419C4178D006FBD89 /* CocoaHTTPServerTests.m */; };
 /* End PBXBuildFile section */
@@ -92,14 +86,9 @@
 		6E5D50FD1B29EAB6006593B3 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
 		6E5D50FE1B29EAB6006593B3 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocket.h; path = ../../Core/WebSocket.h; sourceTree = "<group>"; };
 		6E5D50FF1B29EAB6006593B3 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebSocket.m; path = ../../Core/WebSocket.m; sourceTree = "<group>"; };
-		6E5D51261B29EAC8006593B3 /* DAVConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVConnection.h; sourceTree = "<group>"; };
-		6E5D51271B29EAC8006593B3 /* DAVConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAVConnection.m; sourceTree = "<group>"; };
-		6E5D51281B29EAC8006593B3 /* DAVResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVResponse.h; sourceTree = "<group>"; };
-		6E5D51291B29EAC8006593B3 /* DAVResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAVResponse.m; sourceTree = "<group>"; };
-		6E5D512A1B29EAC8006593B3 /* DELETEResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELETEResponse.h; sourceTree = "<group>"; };
-		6E5D512B1B29EAC8006593B3 /* DELETEResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DELETEResponse.m; sourceTree = "<group>"; };
-		6E5D512C1B29EAC8006593B3 /* PUTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUTResponse.h; sourceTree = "<group>"; };
-		6E5D512D1B29EAC8006593B3 /* PUTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUTResponse.m; sourceTree = "<group>"; };
+		6E5D51361B29EC55006593B3 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		6E5D51371B29EC55006593B3 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		6E5D513A1B29EC73006593B3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6EF631E519C4178D006FBD89 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF631E919C4178D006FBD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaHTTPServer.h; sourceTree = "<group>"; };
@@ -113,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5D51391B29EC55006593B3 /* CocoaLumberjack.framework in Frameworks */,
+				6E5D51381B29EC55006593B3 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +120,9 @@
 		6E5D50D81B29EA9C006593B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E5D513A1B29EC73006593B3 /* libxml2.dylib */,
+				6E5D51361B29EC55006593B3 /* CocoaAsyncSocket.framework */,
+				6E5D51371B29EC55006593B3 /* CocoaLumberjack.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,30 +175,6 @@
 			path = ../../Core/Responses;
 			sourceTree = "<group>";
 		};
-		6E5D51241B29EAC8006593B3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6E5D51251B29EAC8006593B3 /* WebDAV */,
-			);
-			name = Extensions;
-			path = ../../Extensions;
-			sourceTree = "<group>";
-		};
-		6E5D51251B29EAC8006593B3 /* WebDAV */ = {
-			isa = PBXGroup;
-			children = (
-				6E5D51261B29EAC8006593B3 /* DAVConnection.h */,
-				6E5D51271B29EAC8006593B3 /* DAVConnection.m */,
-				6E5D51281B29EAC8006593B3 /* DAVResponse.h */,
-				6E5D51291B29EAC8006593B3 /* DAVResponse.m */,
-				6E5D512A1B29EAC8006593B3 /* DELETEResponse.h */,
-				6E5D512B1B29EAC8006593B3 /* DELETEResponse.m */,
-				6E5D512C1B29EAC8006593B3 /* PUTResponse.h */,
-				6E5D512D1B29EAC8006593B3 /* PUTResponse.m */,
-			);
-			path = WebDAV;
-			sourceTree = "<group>";
-		};
 		6EF631DB19C4178D006FBD89 = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */,
-				6E5D51241B29EAC8006593B3 /* Extensions */,
 				6E5D50D91B29EAB6006593B3 /* Categories */,
 				6E5D50E01B29EAB6006593B3 /* HTTPAuthenticationRequest.h */,
 				6E5D50E11B29EAB6006593B3 /* HTTPAuthenticationRequest.m */,
@@ -284,7 +253,6 @@
 				6EF631EB19C4178D006FBD89 /* CocoaHTTPServer.h in Headers */,
 				6E5D51121B29EAB6006593B3 /* MultipartMessageHeader.h in Headers */,
 				6E5D51161B29EAB6006593B3 /* HTTPAsyncFileResponse.h in Headers */,
-				6E5D51301B29EAC8006593B3 /* DAVResponse.h in Headers */,
 				6E5D510B1B29EAB6006593B3 /* HTTPMessage.h in Headers */,
 				6E5D511E1B29EAB6006593B3 /* HTTPFileResponse.h in Headers */,
 				6E5D51081B29EAB6006593B3 /* HTTPConnection.h in Headers */,
@@ -292,9 +260,7 @@
 				6E5D51001B29EAB6006593B3 /* DDData.h in Headers */,
 				6E5D510A1B29EAB6006593B3 /* HTTPLogging.h in Headers */,
 				6E5D510D1B29EAB6006593B3 /* HTTPResponse.h in Headers */,
-				6E5D51341B29EAC8006593B3 /* PUTResponse.h in Headers */,
 				6E5D51041B29EAB6006593B3 /* DDRange.h in Headers */,
-				6E5D512E1B29EAC8006593B3 /* DAVConnection.h in Headers */,
 				6E5D51021B29EAB6006593B3 /* DDNumber.h in Headers */,
 				6E5D511C1B29EAB6006593B3 /* HTTPErrorResponse.h in Headers */,
 				6E5D51181B29EAB6006593B3 /* HTTPDataResponse.h in Headers */,
@@ -304,7 +270,6 @@
 				6E5D51101B29EAB6006593B3 /* MultipartFormDataParser.h in Headers */,
 				6E5D511A1B29EAB6006593B3 /* HTTPDynamicFileResponse.h in Headers */,
 				6E5D51221B29EAB6006593B3 /* WebSocket.h in Headers */,
-				6E5D51321B29EAC8006593B3 /* DELETEResponse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,9 +373,6 @@
 				6E5D51171B29EAB6006593B3 /* HTTPAsyncFileResponse.m in Sources */,
 				6E5D51071B29EAB6006593B3 /* HTTPAuthenticationRequest.m in Sources */,
 				6E5D51111B29EAB6006593B3 /* MultipartFormDataParser.m in Sources */,
-				6E5D51351B29EAC8006593B3 /* PUTResponse.m in Sources */,
-				6E5D51331B29EAC8006593B3 /* DELETEResponse.m in Sources */,
-				6E5D512F1B29EAC8006593B3 /* DAVConnection.m in Sources */,
 				6E5D51011B29EAB6006593B3 /* DDData.m in Sources */,
 				6E5D51191B29EAB6006593B3 /* HTTPDataResponse.m in Sources */,
 				6E5D510F1B29EAB6006593B3 /* HTTPServer.m in Sources */,
@@ -422,7 +384,6 @@
 				6E5D511F1B29EAB6006593B3 /* HTTPFileResponse.m in Sources */,
 				6E5D51211B29EAB6006593B3 /* HTTPRedirectResponse.m in Sources */,
 				6E5D510C1B29EAB6006593B3 /* HTTPMessage.m in Sources */,
-				6E5D51311B29EAC8006593B3 /* DAVResponse.m in Sources */,
 				6E5D51031B29EAB6006593B3 /* DDNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +494,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Coleman/Developer/MyProjects/CocoaHTTPServer/Carthage/Build/Mac,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -551,7 +515,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Coleman/Developer/MyProjects/CocoaHTTPServer/Carthage/Build/Mac,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
