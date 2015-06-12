@@ -88,7 +88,6 @@
 		6E5D50FF1B29EAB6006593B3 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebSocket.m; path = ../../Core/WebSocket.m; sourceTree = "<group>"; };
 		6E5D51361B29EC55006593B3 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		6E5D51371B29EC55006593B3 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		6E5D513A1B29EC73006593B3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6EF631E519C4178D006FBD89 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF631E919C4178D006FBD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaHTTPServer.h; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		6E5D50D81B29EA9C006593B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E5D513A1B29EC73006593B3 /* libxml2.dylib */,
 				6E5D51361B29EC55006593B3 /* CocoaAsyncSocket.framework */,
 				6E5D51371B29EC55006593B3 /* CocoaLumberjack.framework */,
 			);
