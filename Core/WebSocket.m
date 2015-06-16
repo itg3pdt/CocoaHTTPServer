@@ -3,15 +3,6 @@
 #import "HTTPMessage.h"
 #import "DDNumber.h"
 #import "DDData.h"
-#import "HTTPLogging.h"
-
-#if ! __has_feature(objc_arc)
-#warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
-#endif
-
-// Log levels: off, error, warn, info, verbose
-// Other flags : trace
-static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 
 #define TIMEOUT_NONE          -1
 #define TIMEOUT_REQUEST_BODY  10
@@ -36,10 +27,12 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 #define WS_OP_PING                 9
 #define WS_OP_PONG                 10
 
+/* Unused
 static inline BOOL WS_OP_IS_FINAL_FRAGMENT(UInt8 frame)
 {
 	return (frame & 0x80) ? YES : NO;
 }
+ */
 
 static inline BOOL WS_PAYLOAD_IS_MASKED(UInt8 frame)
 {
@@ -115,7 +108,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 		isWebSocket = NO;
 	}
 	
-	HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isWebSocket ? @"YES" : @"NO"));
+	// HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isWebSocket ? @"YES" : @"NO"));
 	
 	return isWebSocket;
 }
@@ -134,7 +127,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 		isVersion76 = YES;
 	}
 	
-	HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isVersion76 ? @"YES" : @"NO"));
+	// HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isVersion76 ? @"YES" : @"NO"));
 	
 	return isVersion76;
 }
@@ -144,7 +137,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	NSString *key = [request headerField:@"Sec-WebSocket-Key"];
 	BOOL isRFC6455 = (key != nil);
 
-	HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isRFC6455 ? @"YES" : @"NO"));
+	// HTTPLogTrace2(@"%@: %@ - %@", THIS_FILE, THIS_METHOD, (isRFC6455 ? @"YES" : @"NO"));
 
 	return isRFC6455;
 }
@@ -157,7 +150,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (id)initWithRequest:(HTTPMessage *)aRequest socket:(GCDAsyncSocket *)socket
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	if (aRequest == nil)
 	{
@@ -166,14 +159,6 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	
 	if ((self = [super init]))
 	{
-		if (HTTP_LOG_VERBOSE)
-		{
-			NSData *requestHeaders = [aRequest messageData];
-			
-			NSString *temp = [[NSString alloc] initWithData:requestHeaders encoding:NSUTF8StringEncoding];
-			HTTPLogVerbose(@"%@[%p] Request Headers:\n%@", THIS_FILE, self, temp);
-		}
-		
 		websocketQueue = dispatch_queue_create("WebSocket", NULL);
 		request = aRequest;
 		
@@ -191,7 +176,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)dealloc
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	#if !OS_OBJECT_USE_OBJC
 	dispatch_release(websocketQueue);
@@ -270,7 +255,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)readRequestBody
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	NSAssert(isVersion76, @"WebSocket version 75 doesn't contain a request body");
 	
@@ -279,7 +264,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (NSString *)originResponseHeaderValue
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	NSString *origin = [request headerField:@"Origin"];
 	
@@ -297,7 +282,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (NSString *)locationResponseHeaderValue
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	NSString *location;
 	
@@ -328,7 +313,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)sendResponseHeaders
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	// Request (Draft 75):
 	// 
@@ -408,19 +393,12 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 	NSData *responseHeaders = [wsResponse messageData];
 	
-	
-	if (HTTP_LOG_VERBOSE)
-	{
-		NSString *temp = [[NSString alloc] initWithData:responseHeaders encoding:NSUTF8StringEncoding];
-		HTTPLogVerbose(@"%@[%p] Response Headers:\n%@", THIS_FILE, self, temp);
-	}
-	
 	[asyncSocket writeData:responseHeaders withTimeout:TIMEOUT_NONE tag:TAG_HTTP_RESPONSE_HEADERS];
 }
 
 - (NSData *)processKey:(NSString *)key
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	unichar c;
 	NSUInteger i;
@@ -455,7 +433,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	else
 		resultHostNum = num / numSpaces;
 	
-	HTTPLogVerbose(@"key(%@) -> %qi / %qi = %qi", key, num, numSpaces, resultHostNum);
+	// HTTPLogVerbose(@"key(%@) -> %qi / %qi = %qi", key, num, numSpaces, resultHostNum);
 	
 	// Convert result to 4 byte big-endian (network byte order)
 	// and then convert to raw data.
@@ -467,7 +445,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)sendResponseBody:(NSData *)d3
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	NSAssert(isVersion76, @"WebSocket version 75 doesn't contain a response body");
 	NSAssert([d3 length] == 8, @"Invalid requestBody length");
@@ -490,24 +468,6 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	NSData *responseBody = [d0 md5Digest];
 	
 	[asyncSocket writeData:responseBody withTimeout:TIMEOUT_NONE tag:TAG_HTTP_RESPONSE_BODY];
-	
-	if (HTTP_LOG_VERBOSE)
-	{
-		NSString *s1 = [[NSString alloc] initWithData:d1 encoding:NSASCIIStringEncoding];
-		NSString *s2 = [[NSString alloc] initWithData:d2 encoding:NSASCIIStringEncoding];
-		NSString *s3 = [[NSString alloc] initWithData:d3 encoding:NSASCIIStringEncoding];
-		
-		NSString *s0 = [[NSString alloc] initWithData:d0 encoding:NSASCIIStringEncoding];
-		
-		NSString *sH = [[NSString alloc] initWithData:responseBody encoding:NSASCIIStringEncoding];
-		
-		HTTPLogVerbose(@"key1 result : raw(%@) str(%@)", d1, s1);
-		HTTPLogVerbose(@"key2 result : raw(%@) str(%@)", d2, s2);
-		HTTPLogVerbose(@"key3 passed : raw(%@) str(%@)", d3, s3);
-		HTTPLogVerbose(@"key0 concat : raw(%@) str(%@)", d0, s0);
-		HTTPLogVerbose(@"responseBody: raw(%@) str(%@)", responseBody, sH);
-		
-	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -516,7 +476,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)didOpen
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	// Override me to perform any custom actions once the WebSocket has been opened.
 	// This method is invoked on the websocketQueue.
@@ -541,7 +501,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)sendData:(NSData *)msgData
 {
-    HTTPLogTrace();
+    // HTTPLogTrace();
     
     NSMutableData *data = nil;
 	
@@ -588,7 +548,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)didReceiveMessage:(NSString *)msg
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	// Override me to process incoming messages.
 	// This method is invoked on the websocketQueue.
@@ -604,7 +564,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)didClose
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	// Override me to perform any cleanup when the socket is closed
 	// This method is invoked on the websocketQueue.
@@ -659,7 +619,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-	HTTPLogTrace();
+	// HTTPLogTrace();
 	
 	if (tag == TAG_HTTP_REQUEST_BODY)
 	{
@@ -783,7 +743,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)error
 {
-	HTTPLogTrace2(@"%@[%p]: socketDidDisconnect:withError: %@", THIS_FILE, self, error);
+	// HTTPLogTrace2(@"%@[%p]: socketDidDisconnect:withError: %@", THIS_FILE, self, error);
 	
 	[self didClose];
 }

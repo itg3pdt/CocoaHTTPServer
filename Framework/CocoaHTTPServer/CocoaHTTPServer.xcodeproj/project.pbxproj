@@ -19,7 +19,6 @@
 		6EF6322C19C417EA006FBD89 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6320619C417EA006FBD89 /* HTTPAuthenticationRequest.m */; };
 		6EF6322D19C417EA006FBD89 /* HTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF6320719C417EA006FBD89 /* HTTPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EF6322E19C417EA006FBD89 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6320819C417EA006FBD89 /* HTTPConnection.m */; };
-		6EF6322F19C417EA006FBD89 /* HTTPLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF6320919C417EA006FBD89 /* HTTPLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EF6323019C417EA006FBD89 /* HTTPMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF6320A19C417EA006FBD89 /* HTTPMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EF6323119C417EA006FBD89 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6320B19C417EA006FBD89 /* HTTPMessage.m */; };
 		6EF6323219C417EA006FBD89 /* HTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF6320C19C417EA006FBD89 /* HTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,7 +88,6 @@
 		6EF6320619C417EA006FBD89 /* HTTPAuthenticationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPAuthenticationRequest.m; path = ../../../Core/HTTPAuthenticationRequest.m; sourceTree = "<group>"; };
 		6EF6320719C417EA006FBD89 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPConnection.h; path = ../../../Core/HTTPConnection.h; sourceTree = "<group>"; };
 		6EF6320819C417EA006FBD89 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPConnection.m; path = ../../../Core/HTTPConnection.m; sourceTree = "<group>"; };
-		6EF6320919C417EA006FBD89 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPLogging.h; path = ../../../Core/HTTPLogging.h; sourceTree = "<group>"; };
 		6EF6320A19C417EA006FBD89 /* HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPMessage.h; path = ../../../Core/HTTPMessage.h; sourceTree = "<group>"; };
 		6EF6320B19C417EA006FBD89 /* HTTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPMessage.m; path = ../../../Core/HTTPMessage.m; sourceTree = "<group>"; };
 		6EF6320C19C417EA006FBD89 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPResponse.h; path = ../../../Core/HTTPResponse.h; sourceTree = "<group>"; };
@@ -137,10 +135,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6EF631DB19C4178D006FBD89 = {
+		6E02691E1B3050B60035A643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6EF6324919C4182A006FBD89 /* CocoaAsyncSocket.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EF631DB19C4178D006FBD89 = {
+			isa = PBXGroup;
+			children = (
+				6E02691E1B3050B60035A643 /* Frameworks */,
 				6EF631E719C4178D006FBD89 /* CocoaHTTPServer */,
 				6EF631F119C4178D006FBD89 /* CocoaHTTPServerTests */,
 				6EF631E619C4178D006FBD89 /* Products */,
@@ -165,7 +171,6 @@
 				6EF6320619C417EA006FBD89 /* HTTPAuthenticationRequest.m */,
 				6EF6320719C417EA006FBD89 /* HTTPConnection.h */,
 				6EF6320819C417EA006FBD89 /* HTTPConnection.m */,
-				6EF6320919C417EA006FBD89 /* HTTPLogging.h */,
 				6EF6320A19C417EA006FBD89 /* HTTPMessage.h */,
 				6EF6320B19C417EA006FBD89 /* HTTPMessage.m */,
 				6EF6320C19C417EA006FBD89 /* HTTPResponse.h */,
@@ -284,7 +289,6 @@
 				6EF6322519C417EA006FBD89 /* DDData.h in Headers */,
 				6EF6322719C417EA006FBD89 /* DDNumber.h in Headers */,
 				6EF6323219C417EA006FBD89 /* HTTPResponse.h in Headers */,
-				6EF6322F19C417EA006FBD89 /* HTTPLogging.h in Headers */,
 				6EF6324719C417EA006FBD89 /* WebSocket.h in Headers */,
 				6EF6324119C417EA006FBD89 /* HTTPErrorResponse.h in Headers */,
 				6EF6323D19C417EA006FBD89 /* HTTPDataResponse.h in Headers */,
@@ -337,7 +341,7 @@
 		6EF631DC19C4178D006FBD89 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Deusty LLC";
 				TargetAttributes = {
 					6EF631E419C4178D006FBD89 = {
@@ -541,6 +545,7 @@
 		6EF631F919C4178D006FBD89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -559,6 +564,7 @@
 		6EF631FA19C4178D006FBD89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -577,6 +583,7 @@
 		6EF631FC19C4178D006FBD89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -594,6 +601,7 @@
 		6EF631FD19C4178D006FBD89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
