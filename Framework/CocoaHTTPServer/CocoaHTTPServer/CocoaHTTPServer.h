@@ -31,6 +31,9 @@ FOUNDATION_EXPORT const unsigned char CocoaHTTPServerVersionString[];
 #import <CocoaHTTPServer/HTTPErrorResponse.h>
 #import <CocoaHTTPServer/HTTPFileResponse.h>
 #import <CocoaHTTPServer/HTTPRedirectResponse.h>
+#import <CocoaHTTPServer/DDData.h>
+#import <CocoaHTTPServer/DDNumber.h>
+#import <CocoaHTTPServer/DDRange.h>
 
 
 
