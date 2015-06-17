@@ -91,7 +91,7 @@
 		6EF631E519C4178D006FBD89 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF631E919C4178D006FBD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaHTTPServer.h; sourceTree = "<group>"; };
-		6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaHTTPServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests OS X.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CocoaHTTPServerTests OS X.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF631F319C4178D006FBD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF631F419C4178D006FBD89 /* CocoaHTTPServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaHTTPServerTests.m; sourceTree = "<group>"; };
 		6EF631FF19C417EA006FBD89 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF631E519C4178D006FBD89 /* CocoaHTTPServer.framework */,
-				6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests.xctest */,
+				6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests OS X.xctest */,
 				6E96785C1B31FBDD003AFBBA /* CocoaHTTPServer.framework */,
 				6E9678661B31FCC6003AFBBA /* CocoaHTTPServerTests iOS.xctest */,
 			);
@@ -432,7 +432,7 @@
 			);
 			name = "CocoaHTTPServerTests OS X";
 			productName = CocoaHTTPServerTests;
-			productReference = 6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests.xctest */;
+			productReference = 6EF631F019C4178D006FBD89 /* CocoaHTTPServerTests OS X.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -579,7 +579,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/iOS,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -599,7 +602,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/iOS,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -618,6 +624,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)",
 					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/iOS,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -639,6 +646,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)",
 					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/iOS,
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -670,10 +678,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					$SRCROOT/../../Carthage/Build/iOS,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -723,10 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					$SRCROOT/../../Carthage/Build/iOS,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -755,7 +757,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/Mac,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -772,7 +777,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/Mac,
+				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -788,6 +796,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)",
 					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/Mac,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -806,6 +815,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)",
 					"$(inherited)",
+					$SRCROOT/../../Carthage/Build/Mac,
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
