@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EF631E419C4178D006FBD89"
-               BuildableName = "CocoaHTTPServer OS X.framework"
+               BuildableName = "CocoaHTTPServer.framework"
                BlueprintName = "CocoaHTTPServer OS X"
                ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EF631E419C4178D006FBD89"
-            BuildableName = "CocoaHTTPServer OS X.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer OS X"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EF631E419C4178D006FBD89"
-            BuildableName = "CocoaHTTPServer OS X.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer OS X"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EF631E419C4178D006FBD89"
-            BuildableName = "CocoaHTTPServer OS X.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer OS X"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>

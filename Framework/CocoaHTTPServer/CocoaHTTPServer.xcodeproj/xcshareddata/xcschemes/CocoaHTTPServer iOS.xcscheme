@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E9678301B31FBDD003AFBBA"
-               BuildableName = "CocoaHTTPServer copy.framework"
+               BuildableName = "CocoaHTTPServer.framework"
                BlueprintName = "CocoaHTTPServer iOS"
                ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E96785E1B31FCC6003AFBBA"
-               BuildableName = "CocoaHTTPServerTests copy.xctest"
+               BuildableName = "CocoaHTTPServerTests iOS.xctest"
                BlueprintName = "CocoaHTTPServerTests iOS"
                ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E9678301B31FBDD003AFBBA"
-            BuildableName = "CocoaHTTPServer copy.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer iOS"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E9678301B31FBDD003AFBBA"
-            BuildableName = "CocoaHTTPServer copy.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer iOS"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E9678301B31FBDD003AFBBA"
-            BuildableName = "CocoaHTTPServer copy.framework"
+            BuildableName = "CocoaHTTPServer.framework"
             BlueprintName = "CocoaHTTPServer iOS"
             ReferencedContainer = "container:CocoaHTTPServer.xcodeproj">
          </BuildableReference>
