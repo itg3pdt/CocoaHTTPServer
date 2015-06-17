@@ -4,3 +4,7 @@
 *.mode2v3
 xcuserdata
 *~
+
+Carthage/*
+Carthage/Build/*
+Carthage/Build/Mac/*
