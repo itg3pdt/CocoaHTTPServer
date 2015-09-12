@@ -1635,6 +1635,11 @@ static NSMutableArray *recentNonces;
 	return fullPath;
 }
 
+- (HTTPConfig *)config
+{
+    return config;
+}
+
 /**
  * This method is called to get a response for a request.
  * You may return any object that adopts the HTTPResponse protocol.

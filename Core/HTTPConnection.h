@@ -69,6 +69,8 @@
 - (void)start;
 - (void)stop;
 
+- (HTTPConfig *)config;
+
 - (void)startConnection;
 
 - (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path;
