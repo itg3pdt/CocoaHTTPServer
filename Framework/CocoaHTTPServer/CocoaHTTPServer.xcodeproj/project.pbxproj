@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390C630727589627004EDE4E /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390C630627589627004EDE4E /* CocoaAsyncSocket.xcframework */; };
+		390C630827589627004EDE4E /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390C630627589627004EDE4E /* CocoaAsyncSocket.xcframework */; };
 		6E9678321B31FBDD003AFBBA /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6320419C417EA006FBD89 /* DDRange.m */; };
 		6E9678331B31FBDD003AFBBA /* MultipartFormDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6321119C417EA006FBD89 /* MultipartFormDataParser.m */; };
 		6E9678341B31FBDD003AFBBA /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6322219C417EA006FBD89 /* HTTPRedirectResponse.m */; };
@@ -84,10 +86,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390C630627589627004EDE4E /* CocoaAsyncSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaAsyncSocket.xcframework; path = ../../Carthage/Build/CocoaAsyncSocket.xcframework; sourceTree = "<group>"; };
 		6E96785C1B31FBDD003AFBBA /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9678661B31FCC6003AFBBA /* CocoaHTTPServerTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CocoaHTTPServerTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E9678691B31FFC7003AFBBA /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		6E96786B1B31FFC7003AFBBA /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		6EF631E519C4178D006FBD89 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaHTTPServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF631E919C4178D006FBD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF631EA19C4178D006FBD89 /* CocoaHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaHTTPServer.h; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390C630827589627004EDE4E /* CocoaAsyncSocket.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390C630727589627004EDE4E /* CocoaAsyncSocket.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,28 +169,9 @@
 		6E02691E1B3050B60035A643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E9678681B31FFC7003AFBBA /* iOS */,
-				6E96786A1B31FFC7003AFBBA /* Mac */,
+				390C630627589627004EDE4E /* CocoaAsyncSocket.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6E9678681B31FFC7003AFBBA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6E9678691B31FFC7003AFBBA /* CocoaAsyncSocket.framework */,
-			);
-			name = iOS;
-			path = ../../Carthage/Build/iOS;
-			sourceTree = "<group>";
-		};
-		6E96786A1B31FFC7003AFBBA /* Mac */ = {
-			isa = PBXGroup;
-			children = (
-				6E96786B1B31FFC7003AFBBA /* CocoaAsyncSocket.framework */,
-			);
-			name = Mac;
-			path = ../../Carthage/Build/Mac;
 			sourceTree = "<group>";
 		};
 		6EF631DB19C4178D006FBD89 = {
@@ -457,6 +441,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 6EF631DB19C4178D006FBD89;
@@ -585,7 +570,11 @@
 				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = CocoaHTTPServer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -608,7 +597,11 @@
 				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = CocoaHTTPServer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -631,7 +624,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -649,7 +646,11 @@
 					$SRCROOT/../../Carthage/Build/iOS,
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -763,7 +764,11 @@
 				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = CocoaHTTPServer;
 				SKIP_INSTALL = YES;
 			};
@@ -783,7 +788,11 @@
 				);
 				INFOPLIST_FILE = CocoaHTTPServer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = CocoaHTTPServer;
 				SKIP_INSTALL = YES;
 			};
@@ -803,7 +812,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -818,7 +831,11 @@
 					$SRCROOT/../../Carthage/Build/Mac,
 				);
 				INFOPLIST_FILE = CocoaHTTPServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
